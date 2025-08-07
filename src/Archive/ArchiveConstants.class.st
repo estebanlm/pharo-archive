@@ -1,0 +1,1446 @@
+Class {
+	#name : 'ArchiveConstants',
+	#superclass : 'SharedPool',
+	#classVars : [
+		'AE_IFBLK',
+		'AE_IFCHR',
+		'AE_IFDIR',
+		'AE_IFIFO',
+		'AE_IFLNK',
+		'AE_IFMT',
+		'AE_IFREG',
+		'AE_IFSOCK',
+		'AE_SYMLINK_TYPE_DIRECTORY',
+		'AE_SYMLINK_TYPE_FILE',
+		'AE_SYMLINK_TYPE_UNDEFINED',
+		'ARCHIVE_COMPRESSION_BZIP2',
+		'ARCHIVE_COMPRESSION_COMPRESS',
+		'ARCHIVE_COMPRESSION_GZIP',
+		'ARCHIVE_COMPRESSION_LRZIP',
+		'ARCHIVE_COMPRESSION_LZIP',
+		'ARCHIVE_COMPRESSION_LZMA',
+		'ARCHIVE_COMPRESSION_NONE',
+		'ARCHIVE_COMPRESSION_PROGRAM',
+		'ARCHIVE_COMPRESSION_RPM',
+		'ARCHIVE_COMPRESSION_UU',
+		'ARCHIVE_COMPRESSION_XZ',
+		'ARCHIVE_ENTRY_ACL_ADD_FILE',
+		'ARCHIVE_ENTRY_ACL_ADD_SUBDIRECTORY',
+		'ARCHIVE_ENTRY_ACL_APPEND_DATA',
+		'ARCHIVE_ENTRY_ACL_DELETE',
+		'ARCHIVE_ENTRY_ACL_DELETE_CHILD',
+		'ARCHIVE_ENTRY_ACL_ENTRY_DIRECTORY_INHERIT',
+		'ARCHIVE_ENTRY_ACL_ENTRY_FAILED_ACCESS',
+		'ARCHIVE_ENTRY_ACL_ENTRY_FILE_INHERIT',
+		'ARCHIVE_ENTRY_ACL_ENTRY_INHERITED',
+		'ARCHIVE_ENTRY_ACL_ENTRY_INHERIT_ONLY',
+		'ARCHIVE_ENTRY_ACL_ENTRY_NO_PROPAGATE_INHERIT',
+		'ARCHIVE_ENTRY_ACL_ENTRY_SUCCESSFUL_ACCESS',
+		'ARCHIVE_ENTRY_ACL_EVERYONE',
+		'ARCHIVE_ENTRY_ACL_EXECUTE',
+		'ARCHIVE_ENTRY_ACL_GROUP',
+		'ARCHIVE_ENTRY_ACL_GROUP_OBJ',
+		'ARCHIVE_ENTRY_ACL_INHERITANCE_NFS4',
+		'ARCHIVE_ENTRY_ACL_LIST_DIRECTORY',
+		'ARCHIVE_ENTRY_ACL_MASK',
+		'ARCHIVE_ENTRY_ACL_OTHER',
+		'ARCHIVE_ENTRY_ACL_PERMS_NFS4',
+		'ARCHIVE_ENTRY_ACL_PERMS_POSIX1E',
+		'ARCHIVE_ENTRY_ACL_READ',
+		'ARCHIVE_ENTRY_ACL_READ_ACL',
+		'ARCHIVE_ENTRY_ACL_READ_ATTRIBUTES',
+		'ARCHIVE_ENTRY_ACL_READ_DATA',
+		'ARCHIVE_ENTRY_ACL_READ_NAMED_ATTRS',
+		'ARCHIVE_ENTRY_ACL_STYLE_COMPACT',
+		'ARCHIVE_ENTRY_ACL_STYLE_EXTRA_ID',
+		'ARCHIVE_ENTRY_ACL_STYLE_MARK_DEFAULT',
+		'ARCHIVE_ENTRY_ACL_STYLE_SEPARATOR_COMMA',
+		'ARCHIVE_ENTRY_ACL_STYLE_SOLARIS',
+		'ARCHIVE_ENTRY_ACL_SYNCHRONIZE',
+		'ARCHIVE_ENTRY_ACL_TYPE_ACCESS',
+		'ARCHIVE_ENTRY_ACL_TYPE_ALARM',
+		'ARCHIVE_ENTRY_ACL_TYPE_ALLOW',
+		'ARCHIVE_ENTRY_ACL_TYPE_AUDIT',
+		'ARCHIVE_ENTRY_ACL_TYPE_DEFAULT',
+		'ARCHIVE_ENTRY_ACL_TYPE_DENY',
+		'ARCHIVE_ENTRY_ACL_TYPE_NFS4',
+		'ARCHIVE_ENTRY_ACL_TYPE_POSIX1E',
+		'ARCHIVE_ENTRY_ACL_USER',
+		'ARCHIVE_ENTRY_ACL_USER_OBJ',
+		'ARCHIVE_ENTRY_ACL_WRITE',
+		'ARCHIVE_ENTRY_ACL_WRITE_ACL',
+		'ARCHIVE_ENTRY_ACL_WRITE_ATTRIBUTES',
+		'ARCHIVE_ENTRY_ACL_WRITE_DATA',
+		'ARCHIVE_ENTRY_ACL_WRITE_NAMED_ATTRS',
+		'ARCHIVE_ENTRY_ACL_WRITE_OWNER',
+		'ARCHIVE_ENTRY_DIGEST_MD5',
+		'ARCHIVE_ENTRY_DIGEST_RMD160',
+		'ARCHIVE_ENTRY_DIGEST_SHA1',
+		'ARCHIVE_ENTRY_DIGEST_SHA256',
+		'ARCHIVE_ENTRY_DIGEST_SHA384',
+		'ARCHIVE_ENTRY_DIGEST_SHA512',
+		'ARCHIVE_EOF',
+		'ARCHIVE_EXTRACT_ACL',
+		'ARCHIVE_EXTRACT_CLEAR_NOCHANGE_FFLAGS',
+		'ARCHIVE_EXTRACT_FFLAGS',
+		'ARCHIVE_EXTRACT_HFS_COMPRESSION_FORCED',
+		'ARCHIVE_EXTRACT_MAC_METADATA',
+		'ARCHIVE_EXTRACT_NO_AUTODIR',
+		'ARCHIVE_EXTRACT_NO_HFS_COMPRESSION',
+		'ARCHIVE_EXTRACT_NO_OVERWRITE',
+		'ARCHIVE_EXTRACT_NO_OVERWRITE_NEWER',
+		'ARCHIVE_EXTRACT_OWNER',
+		'ARCHIVE_EXTRACT_PERM',
+		'ARCHIVE_EXTRACT_SAFE_WRITES',
+		'ARCHIVE_EXTRACT_SECURE_NOABSOLUTEPATHS',
+		'ARCHIVE_EXTRACT_SECURE_NODOTDOT',
+		'ARCHIVE_EXTRACT_SECURE_SYMLINKS',
+		'ARCHIVE_EXTRACT_SPARSE',
+		'ARCHIVE_EXTRACT_TIME',
+		'ARCHIVE_EXTRACT_UNLINK',
+		'ARCHIVE_EXTRACT_XATTR',
+		'ARCHIVE_FAILED',
+		'ARCHIVE_FATAL',
+		'ARCHIVE_FILTER_BZIP2',
+		'ARCHIVE_FILTER_COMPRESS',
+		'ARCHIVE_FILTER_GRZIP',
+		'ARCHIVE_FILTER_GZIP',
+		'ARCHIVE_FILTER_LRZIP',
+		'ARCHIVE_FILTER_LZ4',
+		'ARCHIVE_FILTER_LZIP',
+		'ARCHIVE_FILTER_LZMA',
+		'ARCHIVE_FILTER_LZOP',
+		'ARCHIVE_FILTER_NONE',
+		'ARCHIVE_FILTER_PROGRAM',
+		'ARCHIVE_FILTER_RPM',
+		'ARCHIVE_FILTER_UU',
+		'ARCHIVE_FILTER_XZ',
+		'ARCHIVE_FILTER_ZSTD',
+		'ARCHIVE_FORMAT_7ZIP',
+		'ARCHIVE_FORMAT_AR',
+		'ARCHIVE_FORMAT_AR_BSD',
+		'ARCHIVE_FORMAT_AR_GNU',
+		'ARCHIVE_FORMAT_BASE_MASK',
+		'ARCHIVE_FORMAT_CAB',
+		'ARCHIVE_FORMAT_CPIO',
+		'ARCHIVE_FORMAT_CPIO_AFIO_LARGE',
+		'ARCHIVE_FORMAT_CPIO_BIN_BE',
+		'ARCHIVE_FORMAT_CPIO_BIN_LE',
+		'ARCHIVE_FORMAT_CPIO_POSIX',
+		'ARCHIVE_FORMAT_CPIO_PWB',
+		'ARCHIVE_FORMAT_CPIO_SVR4_CRC',
+		'ARCHIVE_FORMAT_CPIO_SVR4_NOCRC',
+		'ARCHIVE_FORMAT_EMPTY',
+		'ARCHIVE_FORMAT_ISO9660',
+		'ARCHIVE_FORMAT_ISO9660_ROCKRIDGE',
+		'ARCHIVE_FORMAT_LHA',
+		'ARCHIVE_FORMAT_MTREE',
+		'ARCHIVE_FORMAT_RAR',
+		'ARCHIVE_FORMAT_RAR_V5',
+		'ARCHIVE_FORMAT_RAW',
+		'ARCHIVE_FORMAT_SHAR',
+		'ARCHIVE_FORMAT_SHAR_BASE',
+		'ARCHIVE_FORMAT_SHAR_DUMP',
+		'ARCHIVE_FORMAT_TAR',
+		'ARCHIVE_FORMAT_TAR_GNUTAR',
+		'ARCHIVE_FORMAT_TAR_PAX_INTERCHANGE',
+		'ARCHIVE_FORMAT_TAR_PAX_RESTRICTED',
+		'ARCHIVE_FORMAT_TAR_USTAR',
+		'ARCHIVE_FORMAT_WARC',
+		'ARCHIVE_FORMAT_XAR',
+		'ARCHIVE_FORMAT_ZIP',
+		'ARCHIVE_MATCH_CTIME',
+		'ARCHIVE_MATCH_EQUAL',
+		'ARCHIVE_MATCH_MTIME',
+		'ARCHIVE_MATCH_NEWER',
+		'ARCHIVE_MATCH_OLDER',
+		'ARCHIVE_OK',
+		'ARCHIVE_READDISK_HONOR_NODUMP',
+		'ARCHIVE_READDISK_MAC_COPYFILE',
+		'ARCHIVE_READDISK_NO_ACL',
+		'ARCHIVE_READDISK_NO_FFLAGS',
+		'ARCHIVE_READDISK_NO_SPARSE',
+		'ARCHIVE_READDISK_NO_TRAVERSE_MOUNTS',
+		'ARCHIVE_READDISK_NO_XATTR',
+		'ARCHIVE_READDISK_RESTORE_ATIME',
+		'ARCHIVE_READ_FORMAT_CAPS_ENCRYPT_DATA',
+		'ARCHIVE_READ_FORMAT_CAPS_ENCRYPT_METADATA',
+		'ARCHIVE_READ_FORMAT_CAPS_NONE',
+		'ARCHIVE_READ_FORMAT_ENCRYPTION_DONT_KNOW',
+		'ARCHIVE_READ_FORMAT_ENCRYPTION_UNSUPPORTED',
+		'ARCHIVE_RETRY',
+		'ARCHIVE_VERSION_NUMBER',
+		'ARCHIVE_VERSION_ONLY_STRING',
+		'ARCHIVE_VERSION_STRING',
+		'ARCHIVE_WARN',
+		'OLD_ARCHIVE_ENTRY_ACL_STYLE_EXTRA_ID',
+		'OLD_ARCHIVE_ENTRY_ACL_STYLE_MARK_DEFAULT',
+		'__LA_DEV_T',
+		'__LA_INO_T',
+		'__LA_INT64_T',
+		'__LA_MODE_T',
+		'__LA_SSIZE_T',
+		'__LA_TIME_T'
+	],
+	#category : 'Archive-Library',
+	#package : 'Archive',
+	#tag : 'Library'
+}
+
+{ #category : 'accessing' }
+ArchiveConstants class >> AE_IFBLK [
+
+	^ AE_IFBLK
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> AE_IFCHR [
+
+	^ AE_IFCHR
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> AE_IFDIR [
+
+	^ AE_IFDIR
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> AE_IFIFO [
+
+	^ AE_IFIFO
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> AE_IFLNK [
+
+	^ AE_IFLNK
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> AE_IFMT [
+
+	^ AE_IFMT
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> AE_IFREG [
+
+	^ AE_IFREG
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> AE_IFSOCK [
+
+	^ AE_IFSOCK
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> AE_SYMLINK_TYPE_DIRECTORY [
+
+	^ AE_SYMLINK_TYPE_DIRECTORY
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> AE_SYMLINK_TYPE_FILE [
+
+	^ AE_SYMLINK_TYPE_FILE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> AE_SYMLINK_TYPE_UNDEFINED [
+
+	^ AE_SYMLINK_TYPE_UNDEFINED
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_COMPRESSION_BZIP2 [
+
+	^ ARCHIVE_COMPRESSION_BZIP2
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_COMPRESSION_COMPRESS [
+
+	^ ARCHIVE_COMPRESSION_COMPRESS
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_COMPRESSION_GZIP [
+
+	^ ARCHIVE_COMPRESSION_GZIP
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_COMPRESSION_LRZIP [
+
+	^ ARCHIVE_COMPRESSION_LRZIP
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_COMPRESSION_LZIP [
+
+	^ ARCHIVE_COMPRESSION_LZIP
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_COMPRESSION_LZMA [
+
+	^ ARCHIVE_COMPRESSION_LZMA
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_COMPRESSION_NONE [
+
+	^ ARCHIVE_COMPRESSION_NONE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_COMPRESSION_PROGRAM [
+
+	^ ARCHIVE_COMPRESSION_PROGRAM
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_COMPRESSION_RPM [
+
+	^ ARCHIVE_COMPRESSION_RPM
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_COMPRESSION_UU [
+
+	^ ARCHIVE_COMPRESSION_UU
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_COMPRESSION_XZ [
+
+	^ ARCHIVE_COMPRESSION_XZ
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_ADD_FILE [
+
+	^ ARCHIVE_ENTRY_ACL_ADD_FILE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_ADD_SUBDIRECTORY [
+
+	^ ARCHIVE_ENTRY_ACL_ADD_SUBDIRECTORY
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_APPEND_DATA [
+
+	^ ARCHIVE_ENTRY_ACL_APPEND_DATA
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_DELETE [
+
+	^ ARCHIVE_ENTRY_ACL_DELETE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_DELETE_CHILD [
+
+	^ ARCHIVE_ENTRY_ACL_DELETE_CHILD
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_ENTRY_DIRECTORY_INHERIT [
+
+	^ ARCHIVE_ENTRY_ACL_ENTRY_DIRECTORY_INHERIT
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_ENTRY_FAILED_ACCESS [
+
+	^ ARCHIVE_ENTRY_ACL_ENTRY_FAILED_ACCESS
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_ENTRY_FILE_INHERIT [
+
+	^ ARCHIVE_ENTRY_ACL_ENTRY_FILE_INHERIT
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_ENTRY_INHERITED [
+
+	^ ARCHIVE_ENTRY_ACL_ENTRY_INHERITED
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_ENTRY_INHERIT_ONLY [
+
+	^ ARCHIVE_ENTRY_ACL_ENTRY_INHERIT_ONLY
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_ENTRY_NO_PROPAGATE_INHERIT [
+
+	^ ARCHIVE_ENTRY_ACL_ENTRY_NO_PROPAGATE_INHERIT
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_ENTRY_SUCCESSFUL_ACCESS [
+
+	^ ARCHIVE_ENTRY_ACL_ENTRY_SUCCESSFUL_ACCESS
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_EVERYONE [
+
+	^ ARCHIVE_ENTRY_ACL_EVERYONE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_EXECUTE [
+
+	^ ARCHIVE_ENTRY_ACL_EXECUTE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_GROUP [
+
+	^ ARCHIVE_ENTRY_ACL_GROUP
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_GROUP_OBJ [
+
+	^ ARCHIVE_ENTRY_ACL_GROUP_OBJ
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_INHERITANCE_NFS4 [
+
+	^ ARCHIVE_ENTRY_ACL_INHERITANCE_NFS4
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_LIST_DIRECTORY [
+
+	^ ARCHIVE_ENTRY_ACL_LIST_DIRECTORY
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_MASK [
+
+	^ ARCHIVE_ENTRY_ACL_MASK
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_OTHER [
+
+	^ ARCHIVE_ENTRY_ACL_OTHER
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_PERMS_NFS4 [
+
+	^ ARCHIVE_ENTRY_ACL_PERMS_NFS4
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_PERMS_POSIX1E [
+
+	^ ARCHIVE_ENTRY_ACL_PERMS_POSIX1E
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_READ [
+
+	^ ARCHIVE_ENTRY_ACL_READ
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_READ_ACL [
+
+	^ ARCHIVE_ENTRY_ACL_READ_ACL
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_READ_ATTRIBUTES [
+
+	^ ARCHIVE_ENTRY_ACL_READ_ATTRIBUTES
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_READ_DATA [
+
+	^ ARCHIVE_ENTRY_ACL_READ_DATA
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_READ_NAMED_ATTRS [
+
+	^ ARCHIVE_ENTRY_ACL_READ_NAMED_ATTRS
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_STYLE_COMPACT [
+
+	^ ARCHIVE_ENTRY_ACL_STYLE_COMPACT
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_STYLE_EXTRA_ID [
+
+	^ ARCHIVE_ENTRY_ACL_STYLE_EXTRA_ID
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_STYLE_MARK_DEFAULT [
+
+	^ ARCHIVE_ENTRY_ACL_STYLE_MARK_DEFAULT
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_STYLE_SEPARATOR_COMMA [
+
+	^ ARCHIVE_ENTRY_ACL_STYLE_SEPARATOR_COMMA
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_STYLE_SOLARIS [
+
+	^ ARCHIVE_ENTRY_ACL_STYLE_SOLARIS
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_SYNCHRONIZE [
+
+	^ ARCHIVE_ENTRY_ACL_SYNCHRONIZE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_TYPE_ACCESS [
+
+	^ ARCHIVE_ENTRY_ACL_TYPE_ACCESS
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_TYPE_ALARM [
+
+	^ ARCHIVE_ENTRY_ACL_TYPE_ALARM
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_TYPE_ALLOW [
+
+	^ ARCHIVE_ENTRY_ACL_TYPE_ALLOW
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_TYPE_AUDIT [
+
+	^ ARCHIVE_ENTRY_ACL_TYPE_AUDIT
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_TYPE_DEFAULT [
+
+	^ ARCHIVE_ENTRY_ACL_TYPE_DEFAULT
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_TYPE_DENY [
+
+	^ ARCHIVE_ENTRY_ACL_TYPE_DENY
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_TYPE_NFS4 [
+
+	^ ARCHIVE_ENTRY_ACL_TYPE_NFS4
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_TYPE_POSIX1E [
+
+	^ ARCHIVE_ENTRY_ACL_TYPE_POSIX1E
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_USER [
+
+	^ ARCHIVE_ENTRY_ACL_USER
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_USER_OBJ [
+
+	^ ARCHIVE_ENTRY_ACL_USER_OBJ
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_WRITE [
+
+	^ ARCHIVE_ENTRY_ACL_WRITE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_WRITE_ACL [
+
+	^ ARCHIVE_ENTRY_ACL_WRITE_ACL
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_WRITE_ATTRIBUTES [
+
+	^ ARCHIVE_ENTRY_ACL_WRITE_ATTRIBUTES
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_WRITE_DATA [
+
+	^ ARCHIVE_ENTRY_ACL_WRITE_DATA
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_WRITE_NAMED_ATTRS [
+
+	^ ARCHIVE_ENTRY_ACL_WRITE_NAMED_ATTRS
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_ACL_WRITE_OWNER [
+
+	^ ARCHIVE_ENTRY_ACL_WRITE_OWNER
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_DIGEST_MD5 [
+
+	^ ARCHIVE_ENTRY_DIGEST_MD5
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_DIGEST_RMD160 [
+
+	^ ARCHIVE_ENTRY_DIGEST_RMD160
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_DIGEST_SHA1 [
+
+	^ ARCHIVE_ENTRY_DIGEST_SHA1
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_DIGEST_SHA256 [
+
+	^ ARCHIVE_ENTRY_DIGEST_SHA256
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_DIGEST_SHA384 [
+
+	^ ARCHIVE_ENTRY_DIGEST_SHA384
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_ENTRY_DIGEST_SHA512 [
+
+	^ ARCHIVE_ENTRY_DIGEST_SHA512
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EOF [
+
+	^ ARCHIVE_EOF
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_ACL [
+
+	^ ARCHIVE_EXTRACT_ACL
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_CLEAR_NOCHANGE_FFLAGS [
+
+	^ ARCHIVE_EXTRACT_CLEAR_NOCHANGE_FFLAGS
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_FFLAGS [
+
+	^ ARCHIVE_EXTRACT_FFLAGS
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_HFS_COMPRESSION_FORCED [
+
+	^ ARCHIVE_EXTRACT_HFS_COMPRESSION_FORCED
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_MAC_METADATA [
+
+	^ ARCHIVE_EXTRACT_MAC_METADATA
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_NO_AUTODIR [
+
+	^ ARCHIVE_EXTRACT_NO_AUTODIR
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_NO_HFS_COMPRESSION [
+
+	^ ARCHIVE_EXTRACT_NO_HFS_COMPRESSION
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_NO_OVERWRITE [
+
+	^ ARCHIVE_EXTRACT_NO_OVERWRITE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_NO_OVERWRITE_NEWER [
+
+	^ ARCHIVE_EXTRACT_NO_OVERWRITE_NEWER
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_OWNER [
+
+	^ ARCHIVE_EXTRACT_OWNER
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_PERM [
+
+	^ ARCHIVE_EXTRACT_PERM
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_SAFE_WRITES [
+
+	^ ARCHIVE_EXTRACT_SAFE_WRITES
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_SECURE_NOABSOLUTEPATHS [
+
+	^ ARCHIVE_EXTRACT_SECURE_NOABSOLUTEPATHS
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_SECURE_NODOTDOT [
+
+	^ ARCHIVE_EXTRACT_SECURE_NODOTDOT
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_SECURE_SYMLINKS [
+
+	^ ARCHIVE_EXTRACT_SECURE_SYMLINKS
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_SPARSE [
+
+	^ ARCHIVE_EXTRACT_SPARSE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_TIME [
+
+	^ ARCHIVE_EXTRACT_TIME
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_UNLINK [
+
+	^ ARCHIVE_EXTRACT_UNLINK
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_EXTRACT_XATTR [
+
+	^ ARCHIVE_EXTRACT_XATTR
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FAILED [
+
+	^ ARCHIVE_FAILED
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FATAL [
+
+	^ ARCHIVE_FATAL
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FILTER_BZIP2 [
+
+	^ ARCHIVE_FILTER_BZIP2
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FILTER_COMPRESS [
+
+	^ ARCHIVE_FILTER_COMPRESS
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FILTER_GRZIP [
+
+	^ ARCHIVE_FILTER_GRZIP
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FILTER_GZIP [
+
+	^ ARCHIVE_FILTER_GZIP
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FILTER_LRZIP [
+
+	^ ARCHIVE_FILTER_LRZIP
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FILTER_LZ4 [
+
+	^ ARCHIVE_FILTER_LZ4
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FILTER_LZIP [
+
+	^ ARCHIVE_FILTER_LZIP
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FILTER_LZMA [
+
+	^ ARCHIVE_FILTER_LZMA
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FILTER_LZOP [
+
+	^ ARCHIVE_FILTER_LZOP
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FILTER_NONE [
+
+	^ ARCHIVE_FILTER_NONE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FILTER_PROGRAM [
+
+	^ ARCHIVE_FILTER_PROGRAM
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FILTER_RPM [
+
+	^ ARCHIVE_FILTER_RPM
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FILTER_UU [
+
+	^ ARCHIVE_FILTER_UU
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FILTER_XZ [
+
+	^ ARCHIVE_FILTER_XZ
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FILTER_ZSTD [
+
+	^ ARCHIVE_FILTER_ZSTD
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_7ZIP [
+
+	^ ARCHIVE_FORMAT_7ZIP
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_AR [
+
+	^ ARCHIVE_FORMAT_AR
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_AR_BSD [
+
+	^ ARCHIVE_FORMAT_AR_BSD
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_AR_GNU [
+
+	^ ARCHIVE_FORMAT_AR_GNU
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_BASE_MASK [
+
+	^ ARCHIVE_FORMAT_BASE_MASK
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_CAB [
+
+	^ ARCHIVE_FORMAT_CAB
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_CPIO [
+
+	^ ARCHIVE_FORMAT_CPIO
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_CPIO_AFIO_LARGE [
+
+	^ ARCHIVE_FORMAT_CPIO_AFIO_LARGE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_CPIO_BIN_BE [
+
+	^ ARCHIVE_FORMAT_CPIO_BIN_BE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_CPIO_BIN_LE [
+
+	^ ARCHIVE_FORMAT_CPIO_BIN_LE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_CPIO_POSIX [
+
+	^ ARCHIVE_FORMAT_CPIO_POSIX
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_CPIO_PWB [
+
+	^ ARCHIVE_FORMAT_CPIO_PWB
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_CPIO_SVR4_CRC [
+
+	^ ARCHIVE_FORMAT_CPIO_SVR4_CRC
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_CPIO_SVR4_NOCRC [
+
+	^ ARCHIVE_FORMAT_CPIO_SVR4_NOCRC
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_EMPTY [
+
+	^ ARCHIVE_FORMAT_EMPTY
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_ISO9660 [
+
+	^ ARCHIVE_FORMAT_ISO9660
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_ISO9660_ROCKRIDGE [
+
+	^ ARCHIVE_FORMAT_ISO9660_ROCKRIDGE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_LHA [
+
+	^ ARCHIVE_FORMAT_LHA
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_MTREE [
+
+	^ ARCHIVE_FORMAT_MTREE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_RAR [
+
+	^ ARCHIVE_FORMAT_RAR
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_RAR_V5 [
+
+	^ ARCHIVE_FORMAT_RAR_V5
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_RAW [
+
+	^ ARCHIVE_FORMAT_RAW
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_SHAR [
+
+	^ ARCHIVE_FORMAT_SHAR
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_SHAR_BASE [
+
+	^ ARCHIVE_FORMAT_SHAR_BASE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_SHAR_DUMP [
+
+	^ ARCHIVE_FORMAT_SHAR_DUMP
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_TAR [
+
+	^ ARCHIVE_FORMAT_TAR
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_TAR_GNUTAR [
+
+	^ ARCHIVE_FORMAT_TAR_GNUTAR
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_TAR_PAX_INTERCHANGE [
+
+	^ ARCHIVE_FORMAT_TAR_PAX_INTERCHANGE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_TAR_PAX_RESTRICTED [
+
+	^ ARCHIVE_FORMAT_TAR_PAX_RESTRICTED
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_TAR_USTAR [
+
+	^ ARCHIVE_FORMAT_TAR_USTAR
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_WARC [
+
+	^ ARCHIVE_FORMAT_WARC
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_XAR [
+
+	^ ARCHIVE_FORMAT_XAR
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_FORMAT_ZIP [
+
+	^ ARCHIVE_FORMAT_ZIP
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_MATCH_CTIME [
+
+	^ ARCHIVE_MATCH_CTIME
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_MATCH_EQUAL [
+
+	^ ARCHIVE_MATCH_EQUAL
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_MATCH_MTIME [
+
+	^ ARCHIVE_MATCH_MTIME
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_MATCH_NEWER [
+
+	^ ARCHIVE_MATCH_NEWER
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_MATCH_OLDER [
+
+	^ ARCHIVE_MATCH_OLDER
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_OK [
+
+	^ ARCHIVE_OK
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_READDISK_HONOR_NODUMP [
+
+	^ ARCHIVE_READDISK_HONOR_NODUMP
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_READDISK_MAC_COPYFILE [
+
+	^ ARCHIVE_READDISK_MAC_COPYFILE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_READDISK_NO_ACL [
+
+	^ ARCHIVE_READDISK_NO_ACL
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_READDISK_NO_FFLAGS [
+
+	^ ARCHIVE_READDISK_NO_FFLAGS
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_READDISK_NO_SPARSE [
+
+	^ ARCHIVE_READDISK_NO_SPARSE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_READDISK_NO_TRAVERSE_MOUNTS [
+
+	^ ARCHIVE_READDISK_NO_TRAVERSE_MOUNTS
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_READDISK_NO_XATTR [
+
+	^ ARCHIVE_READDISK_NO_XATTR
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_READDISK_RESTORE_ATIME [
+
+	^ ARCHIVE_READDISK_RESTORE_ATIME
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_READ_FORMAT_CAPS_ENCRYPT_DATA [
+
+	^ ARCHIVE_READ_FORMAT_CAPS_ENCRYPT_DATA
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_READ_FORMAT_CAPS_ENCRYPT_METADATA [
+
+	^ ARCHIVE_READ_FORMAT_CAPS_ENCRYPT_METADATA
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_READ_FORMAT_CAPS_NONE [
+
+	^ ARCHIVE_READ_FORMAT_CAPS_NONE
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_READ_FORMAT_ENCRYPTION_DONT_KNOW [
+
+	^ ARCHIVE_READ_FORMAT_ENCRYPTION_DONT_KNOW
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_READ_FORMAT_ENCRYPTION_UNSUPPORTED [
+
+	^ ARCHIVE_READ_FORMAT_ENCRYPTION_UNSUPPORTED
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_RETRY [
+
+	^ ARCHIVE_RETRY
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_VERSION_NUMBER [
+
+	^ ARCHIVE_VERSION_NUMBER
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_VERSION_ONLY_STRING [
+
+	^ ARCHIVE_VERSION_ONLY_STRING
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_VERSION_STRING [
+
+	^ ARCHIVE_VERSION_STRING
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> ARCHIVE_WARN [
+
+	^ ARCHIVE_WARN
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> OLD_ARCHIVE_ENTRY_ACL_STYLE_EXTRA_ID [
+
+	^ OLD_ARCHIVE_ENTRY_ACL_STYLE_EXTRA_ID
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> OLD_ARCHIVE_ENTRY_ACL_STYLE_MARK_DEFAULT [
+
+	^ OLD_ARCHIVE_ENTRY_ACL_STYLE_MARK_DEFAULT
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> __LA_DEV_T [
+
+	^ __LA_DEV_T
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> __LA_INO_T [
+
+	^ __LA_INO_T
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> __LA_INT64_T [
+
+	^ __LA_INT64_T
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> __LA_MODE_T [
+
+	^ __LA_MODE_T
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> __LA_SSIZE_T [
+
+	^ __LA_SSIZE_T
+]
+
+{ #category : 'accessing' }
+ArchiveConstants class >> __LA_TIME_T [
+
+	^ __LA_TIME_T
+]
+
+{ #category : 'class initialization' }
+ArchiveConstants class >> initialize [
+
+	ARCHIVE_VERSION_NUMBER := 16r2DE601.
+	__LA_INT64_T := 0.
+	__LA_SSIZE_T := 0.
+	__LA_MODE_T := 0.
+	__LA_TIME_T := 0.
+	__LA_DEV_T := 0.
+	__LA_INO_T := 0.
+	AE_IFMT := 16rF000.
+	AE_IFREG := 16r8000.
+	AE_IFLNK := 16rA000.
+	AE_IFSOCK := 16rC000.
+	AE_IFCHR := 16r2000.
+	AE_IFBLK := 16r6000.
+	AE_IFDIR := 16r4000.
+	AE_IFIFO := 16r1000.
+	AE_SYMLINK_TYPE_UNDEFINED := 0.
+	AE_SYMLINK_TYPE_FILE := 1.
+	AE_SYMLINK_TYPE_DIRECTORY := 2.
+	ARCHIVE_ENTRY_DIGEST_MD5 := 1.
+	ARCHIVE_ENTRY_DIGEST_RMD160 := 2.
+	ARCHIVE_ENTRY_DIGEST_SHA1 := 3.
+	ARCHIVE_ENTRY_DIGEST_SHA256 := 4.
+	ARCHIVE_ENTRY_DIGEST_SHA384 := 5.
+	ARCHIVE_ENTRY_DIGEST_SHA512 := 6.
+	ARCHIVE_ENTRY_ACL_EXECUTE := 1.
+	ARCHIVE_ENTRY_ACL_WRITE := 2.
+	ARCHIVE_ENTRY_ACL_READ := 4.
+	ARCHIVE_ENTRY_ACL_READ_DATA := 8.
+	ARCHIVE_ENTRY_ACL_LIST_DIRECTORY := 8.
+	ARCHIVE_ENTRY_ACL_WRITE_DATA := 16r10.
+	ARCHIVE_ENTRY_ACL_ADD_FILE := 16r10.
+	ARCHIVE_ENTRY_ACL_APPEND_DATA := 16r20.
+	ARCHIVE_ENTRY_ACL_ADD_SUBDIRECTORY := 16r20.
+	ARCHIVE_ENTRY_ACL_READ_NAMED_ATTRS := 16r40.
+	ARCHIVE_ENTRY_ACL_WRITE_NAMED_ATTRS := 16r80.
+	ARCHIVE_ENTRY_ACL_DELETE_CHILD := 16r100.
+	ARCHIVE_ENTRY_ACL_READ_ATTRIBUTES := 16r200.
+	ARCHIVE_ENTRY_ACL_WRITE_ATTRIBUTES := 16r400.
+	ARCHIVE_ENTRY_ACL_DELETE := 16r800.
+	ARCHIVE_ENTRY_ACL_READ_ACL := 16r1000.
+	ARCHIVE_ENTRY_ACL_WRITE_ACL := 16r2000.
+	ARCHIVE_ENTRY_ACL_WRITE_OWNER := 16r4000.
+	ARCHIVE_ENTRY_ACL_SYNCHRONIZE := 16r8000.
+	ARCHIVE_ENTRY_ACL_PERMS_POSIX1E := 7.
+	ARCHIVE_ENTRY_ACL_PERMS_NFS4 := 16rFFF9.
+	ARCHIVE_ENTRY_ACL_ENTRY_INHERITED := 16r1000000.
+	ARCHIVE_ENTRY_ACL_ENTRY_FILE_INHERIT := 16r2000000.
+	ARCHIVE_ENTRY_ACL_ENTRY_DIRECTORY_INHERIT := 16r4000000.
+	ARCHIVE_ENTRY_ACL_ENTRY_NO_PROPAGATE_INHERIT := 16r8000000.
+	ARCHIVE_ENTRY_ACL_ENTRY_INHERIT_ONLY := 16r10000000.
+	ARCHIVE_ENTRY_ACL_ENTRY_SUCCESSFUL_ACCESS := 16r20000000.
+	ARCHIVE_ENTRY_ACL_ENTRY_FAILED_ACCESS := 16r40000000.
+	ARCHIVE_ENTRY_ACL_INHERITANCE_NFS4 := 16r7F000000.
+	ARCHIVE_ENTRY_ACL_TYPE_ACCESS := 16r100.
+	ARCHIVE_ENTRY_ACL_TYPE_DEFAULT := 16r200.
+	ARCHIVE_ENTRY_ACL_TYPE_ALLOW := 16r400.
+	ARCHIVE_ENTRY_ACL_TYPE_DENY := 16r800.
+	ARCHIVE_ENTRY_ACL_TYPE_AUDIT := 16r1000.
+	ARCHIVE_ENTRY_ACL_TYPE_ALARM := 16r2000.
+	ARCHIVE_ENTRY_ACL_TYPE_POSIX1E := 16r300.
+	ARCHIVE_ENTRY_ACL_TYPE_NFS4 := 16r3C00.
+	ARCHIVE_ENTRY_ACL_USER := 16r2711.
+	ARCHIVE_ENTRY_ACL_USER_OBJ := 16r2712.
+	ARCHIVE_ENTRY_ACL_GROUP := 16r2713.
+	ARCHIVE_ENTRY_ACL_GROUP_OBJ := 16r2714.
+	ARCHIVE_ENTRY_ACL_MASK := 16r2715.
+	ARCHIVE_ENTRY_ACL_OTHER := 16r2716.
+	ARCHIVE_ENTRY_ACL_EVERYONE := 16r277B.
+	ARCHIVE_ENTRY_ACL_STYLE_EXTRA_ID := 1.
+	ARCHIVE_ENTRY_ACL_STYLE_MARK_DEFAULT := 2.
+	ARCHIVE_ENTRY_ACL_STYLE_SOLARIS := 4.
+	ARCHIVE_ENTRY_ACL_STYLE_SEPARATOR_COMMA := 8.
+	ARCHIVE_ENTRY_ACL_STYLE_COMPACT := 16r10.
+	OLD_ARCHIVE_ENTRY_ACL_STYLE_EXTRA_ID := 16r400.
+	OLD_ARCHIVE_ENTRY_ACL_STYLE_MARK_DEFAULT := 16r800.
+	ARCHIVE_VERSION_ONLY_STRING := '3.8.1'.
+	ARCHIVE_VERSION_STRING := 'libarchive 3.8.1'.
+	ARCHIVE_EOF := 1.
+	ARCHIVE_OK := 0.
+	ARCHIVE_RETRY := -16rA.
+	ARCHIVE_WARN := -16r14.
+	ARCHIVE_FAILED := -16r19.
+	ARCHIVE_FATAL := -16r1E.
+	ARCHIVE_FILTER_NONE := 0.
+	ARCHIVE_FILTER_GZIP := 1.
+	ARCHIVE_FILTER_BZIP2 := 2.
+	ARCHIVE_FILTER_COMPRESS := 3.
+	ARCHIVE_FILTER_PROGRAM := 4.
+	ARCHIVE_FILTER_LZMA := 5.
+	ARCHIVE_FILTER_XZ := 6.
+	ARCHIVE_FILTER_UU := 7.
+	ARCHIVE_FILTER_RPM := 8.
+	ARCHIVE_FILTER_LZIP := 9.
+	ARCHIVE_FILTER_LRZIP := 16rA.
+	ARCHIVE_FILTER_LZOP := 16rB.
+	ARCHIVE_FILTER_GRZIP := 16rC.
+	ARCHIVE_FILTER_LZ4 := 16rD.
+	ARCHIVE_FILTER_ZSTD := 16rE.
+	ARCHIVE_COMPRESSION_NONE := 0.
+	ARCHIVE_COMPRESSION_GZIP := 1.
+	ARCHIVE_COMPRESSION_BZIP2 := 2.
+	ARCHIVE_COMPRESSION_COMPRESS := 3.
+	ARCHIVE_COMPRESSION_PROGRAM := 4.
+	ARCHIVE_COMPRESSION_LZMA := 5.
+	ARCHIVE_COMPRESSION_XZ := 6.
+	ARCHIVE_COMPRESSION_UU := 7.
+	ARCHIVE_COMPRESSION_RPM := 8.
+	ARCHIVE_COMPRESSION_LZIP := 9.
+	ARCHIVE_COMPRESSION_LRZIP := 16rA.
+	ARCHIVE_FORMAT_BASE_MASK := 16rFF0000.
+	ARCHIVE_FORMAT_CPIO := 16r10000.
+	ARCHIVE_FORMAT_CPIO_POSIX := 16r10001.
+	ARCHIVE_FORMAT_CPIO_BIN_LE := 16r10002.
+	ARCHIVE_FORMAT_CPIO_BIN_BE := 16r10003.
+	ARCHIVE_FORMAT_CPIO_SVR4_NOCRC := 16r10004.
+	ARCHIVE_FORMAT_CPIO_SVR4_CRC := 16r10005.
+	ARCHIVE_FORMAT_CPIO_AFIO_LARGE := 16r10006.
+	ARCHIVE_FORMAT_CPIO_PWB := 16r10007.
+	ARCHIVE_FORMAT_SHAR := 16r20000.
+	ARCHIVE_FORMAT_SHAR_BASE := 16r20001.
+	ARCHIVE_FORMAT_SHAR_DUMP := 16r20002.
+	ARCHIVE_FORMAT_TAR := 16r30000.
+	ARCHIVE_FORMAT_TAR_USTAR := 16r30001.
+	ARCHIVE_FORMAT_TAR_PAX_INTERCHANGE := 16r30002.
+	ARCHIVE_FORMAT_TAR_PAX_RESTRICTED := 16r30003.
+	ARCHIVE_FORMAT_TAR_GNUTAR := 16r30004.
+	ARCHIVE_FORMAT_ISO9660 := 16r40000.
+	ARCHIVE_FORMAT_ISO9660_ROCKRIDGE := 16r40001.
+	ARCHIVE_FORMAT_ZIP := 16r50000.
+	ARCHIVE_FORMAT_EMPTY := 16r60000.
+	ARCHIVE_FORMAT_AR := 16r70000.
+	ARCHIVE_FORMAT_AR_GNU := 16r70001.
+	ARCHIVE_FORMAT_AR_BSD := 16r70002.
+	ARCHIVE_FORMAT_MTREE := 16r80000.
+	ARCHIVE_FORMAT_RAW := 16r90000.
+	ARCHIVE_FORMAT_XAR := 16rA0000.
+	ARCHIVE_FORMAT_LHA := 16rB0000.
+	ARCHIVE_FORMAT_CAB := 16rC0000.
+	ARCHIVE_FORMAT_RAR := 16rD0000.
+	ARCHIVE_FORMAT_7ZIP := 16rE0000.
+	ARCHIVE_FORMAT_WARC := 16rF0000.
+	ARCHIVE_FORMAT_RAR_V5 := 16r100000.
+	ARCHIVE_READ_FORMAT_CAPS_NONE := 0.
+	ARCHIVE_READ_FORMAT_CAPS_ENCRYPT_DATA := 1.
+	ARCHIVE_READ_FORMAT_CAPS_ENCRYPT_METADATA := 2.
+	ARCHIVE_READ_FORMAT_ENCRYPTION_UNSUPPORTED := -2.
+	ARCHIVE_READ_FORMAT_ENCRYPTION_DONT_KNOW := -1.
+	ARCHIVE_EXTRACT_OWNER := 1.
+	ARCHIVE_EXTRACT_PERM := 2.
+	ARCHIVE_EXTRACT_TIME := 4.
+	ARCHIVE_EXTRACT_NO_OVERWRITE := 8.
+	ARCHIVE_EXTRACT_UNLINK := 16r10.
+	ARCHIVE_EXTRACT_ACL := 16r20.
+	ARCHIVE_EXTRACT_FFLAGS := 16r40.
+	ARCHIVE_EXTRACT_XATTR := 16r80.
+	ARCHIVE_EXTRACT_SECURE_SYMLINKS := 16r100.
+	ARCHIVE_EXTRACT_SECURE_NODOTDOT := 16r200.
+	ARCHIVE_EXTRACT_NO_AUTODIR := 16r400.
+	ARCHIVE_EXTRACT_NO_OVERWRITE_NEWER := 16r800.
+	ARCHIVE_EXTRACT_SPARSE := 16r1000.
+	ARCHIVE_EXTRACT_MAC_METADATA := 16r2000.
+	ARCHIVE_EXTRACT_NO_HFS_COMPRESSION := 16r4000.
+	ARCHIVE_EXTRACT_HFS_COMPRESSION_FORCED := 16r8000.
+	ARCHIVE_EXTRACT_SECURE_NOABSOLUTEPATHS := 16r10000.
+	ARCHIVE_EXTRACT_CLEAR_NOCHANGE_FFLAGS := 16r20000.
+	ARCHIVE_EXTRACT_SAFE_WRITES := 16r40000.
+	ARCHIVE_READDISK_RESTORE_ATIME := 1.
+	ARCHIVE_READDISK_HONOR_NODUMP := 2.
+	ARCHIVE_READDISK_MAC_COPYFILE := 4.
+	ARCHIVE_READDISK_NO_TRAVERSE_MOUNTS := 8.
+	ARCHIVE_READDISK_NO_XATTR := 16r10.
+	ARCHIVE_READDISK_NO_ACL := 16r20.
+	ARCHIVE_READDISK_NO_FFLAGS := 16r40.
+	ARCHIVE_READDISK_NO_SPARSE := 16r80.
+	ARCHIVE_MATCH_MTIME := 16r100.
+	ARCHIVE_MATCH_CTIME := 16r200.
+	ARCHIVE_MATCH_NEWER := 1.
+	ARCHIVE_MATCH_OLDER := 2.
+	ARCHIVE_MATCH_EQUAL := 16r10
+]
